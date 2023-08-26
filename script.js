@@ -30,6 +30,16 @@ function cleanGrid() {
         });
 }
 
+function playMusic() {
+    const music = document.getElementById('neo_mane');
+    music.play();
+}
+
+function pauseMusic() {
+    const music = document.getElementById('neo_mane');
+    music.pause();
+}
+
 const changeButton = document.querySelector('.change-grid');
 changeButton.addEventListener('click', () => {
     const userInput = Number(prompt('Prompt'));
@@ -44,3 +54,9 @@ changeButton.addEventListener('click', () => {
 
 const refreshButton = document.querySelector('.refresh-grid');
 refreshButton.addEventListener('click', cleanGrid);
+
+const playMusicButton = document.querySelector('.play');
+playMusicButton.addEventListener('click', playMusic);
+
+const pauseMusicButton = document.querySelector('.pause');
+pauseMusicButton.addEventListener('click', pauseMusic);
