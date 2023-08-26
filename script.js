@@ -1,13 +1,13 @@
 function changeGridSize(num = 16) {
-    const gridContainer = document.querySelector('.container');
+    const grid = document.querySelector('.grid');
 
-    gridContainer.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
-    gridContainer.style.gridTemplateRows = `repeat(${num}, 1fr)`;
+    grid.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
+    grid.style.gridTemplateRows = `repeat(${num}, 1fr)`;
 
     for (let i = 0; i < num * num; i++) {
         const gridBox = document.createElement('div');
         gridBox.classList.add('box');
-        gridContainer.appendChild(gridBox);
+        grid.appendChild(gridBox);
     }
 
     changeBackgroundColor();
@@ -34,10 +34,13 @@ const changeButton = document.querySelector('.change-grid');
 changeButton.addEventListener('click', () => {
     const userInput = Number(prompt('Prompt'));
     
-    if(userInput > 120 || userInput === null) {
+    if(userInput > 120) {
         alert('ERROR: Please select a number less than 120.');
     } else {
         cleanGrid();
         changeGridSize(userInput);
     };
 });
+
+const refreshButton = document.querySelector('.refresh-grid');
+refreshButton.addEventListener('click', cleanGrid);
