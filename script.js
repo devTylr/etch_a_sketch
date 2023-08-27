@@ -42,7 +42,7 @@ function pauseMusic() {
 
 const changeButton = document.querySelector('.change-grid');
 changeButton.addEventListener('click', () => {
-    const userInput = Number(prompt('Prompt'));
+    const userInput = Number(prompt('Enter a number that will determine the size of the grid'));
     
     if(userInput > 120) {
         alert('ERROR: Please select a number less than 120.');
